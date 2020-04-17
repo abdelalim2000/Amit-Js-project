@@ -47,8 +47,8 @@ var validate = (username, password) => {
   return false;
 };
 
-/* var validate = (user, i) => {
-  return user;
+/* var validate = (user) => {
+  return user
 }; */
 
 //logging in our user and showing of the posts
@@ -58,7 +58,12 @@ var login = (user, pass) => {
   } else {
     alert("Wrong username or password");
   }
-  /*  userDataBase.forEach(validate); */
+  /* userDataBase.forEach((id) => {
+    if (user === id.username && parseInt(pass) === id.password) {
+      console.log(postsDataBase);
+    }
+    alert("Wrong username or password");
+  }); */
 };
 
 //Taking input from user
