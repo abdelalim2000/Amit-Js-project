@@ -2,15 +2,15 @@
 var userDataBase = [
   {
     username: "mohamed",
-    password: 0000,
+    password: 1234,
   },
   {
     username: "ahmed",
-    password: 0000,
+    password: 1234,
   },
   {
     username: "ali",
-    password: 0000,
+    password: 1234,
   },
 ];
 
@@ -34,8 +34,36 @@ var postsDataBase = [
   },
 ];
 
-//looping in our users & validate it`s excist
-var validate = (username, password) => {
+//declare a memory for user
+var isvalid = false;
+
+//validate user
+let valid = (username, password) => {
+  //looping in user database
+  userDataBase.forEach((id) => {
+    if (username === id.username && parseInt(password) === id.password) {
+      isvalid = true;
+      return isvalid;
+    }
+    return isvalid;
+  });
+  //showing user his time lone or resign user
+  if (isvalid) {
+    console.log(postsDataBase);
+  } else {
+    alert("Wrong username or password");
+  }
+};
+
+//getting input from user
+let userNamePrompt = prompt("Enter userName");
+let passwordPrompt = prompt("Enter Password");
+
+//init func
+valid(userNamePrompt, passwordPrompt);
+
+/* //looping in our users & validate it`s excist
+/* var validate = (username, password) => {
   for (var i = 0; i < userDataBase.length; i++) {
     if (
       username === userDataBase[i].username &&
@@ -45,30 +73,22 @@ var validate = (username, password) => {
     }
   }
   return false;
-};
-
-/* var validate = (user) => {
-  return user
-}; */
+}; 
 
 //logging in our user and showing of the posts
 var login = (user, pass) => {
-  if (validate(user, pass)) {
+  /* if (validate(user, pass)) {
     console.log(postsDataBase);
   } else {
     alert("Wrong username or password");
-  }
-  /* userDataBase.forEach((id) => {
-    if (user === id.username && parseInt(pass) === id.password) {
-      console.log(postsDataBase);
-    }
-    alert("Wrong username or password");
-  }); */
+  } 
+  
 };
 
-//Taking input from user
+/* //Taking input from user
 var userNamePrompt = prompt("Enter userName");
 var passwordPrompt = prompt("Enter Password");
 
 //init func
 login(userNamePrompt, passwordPrompt);
+ */
